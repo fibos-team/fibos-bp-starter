@@ -1,0 +1,23 @@
+{
+  "name": "fibos-bp-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bp.js",
+  "dependencies": {
+    "json-bigint": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibos-team/fibos-bp-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fibos-team/fibos-bp-starter/issues"
+  },
+  "homepage": "https://github.com/fibos-team/fibos-bp-starter#readme"
+}
