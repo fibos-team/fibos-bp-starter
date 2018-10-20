@@ -13,7 +13,7 @@ module.exports = (at) => {
 
   if(actioname === 'claimrewards') {
 
-    fs.appendFile('./logs/claim_rewards.log', JSONbig.stringify(at, null, 2) + '\n--------------------\n')
+    // fs.appendFile('./logs/claim_rewards.log', JSONbig.stringify(at, null, 2) + '\n--------------------\n')
 
     let owner = data.owner
     let sql = "INSERT INTO rewards(`owner`,`transaction_id`,`created_at`, `name`, `data`) VALUES ('" + owner + "','" + trx_id + "','" + block_time + "','" + actioname+ "','" + JSON.stringify(data) + "') ON DUPLICATE KEY UPDATE `transaction_id` = '" + trx_id + "'"
