@@ -3,7 +3,7 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-11-11 00:31:55
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-11-11 00:50:35
+ * @Last Modified time: 2018-11-11 14:22:19
  */
 
 
@@ -11,10 +11,11 @@ const fibos = require('fibos')
 var fs = require('fs')
 
 
-const { p2p_peer_address, p2p_listen_endpoint } = require('./p2p.json')
+const p2p_peer_address= require('./p2p.json')
 
 const env = require('./env')
 
+const { p2p_listen_endpoint } = env
 
 console.notice('start FIBOS producer nodes')
 
