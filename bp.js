@@ -3,33 +3,24 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-11-11 00:31:55
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-11-11 14:22:19
+ * @Last Modified time: 2018-11-11 14:59:44
  */
-
 
 const fibos = require('fibos')
 var fs = require('fs')
 
-
-const p2p_peer_address= require('./p2p.json')
-
-const env = require('./env')
-
-const { p2p_listen_endpoint } = env
+const {
+  p2p_peer_address,
+  p2p_listen_endpoint,
+  producer_name,
+  public_key,
+  private_key
+} = require('./env')
 
 console.notice('start FIBOS producer nodes')
 
-// while (true) {
-//   keys = console.readLine('input the producer-name:public-key:private-key ===> oooo:xxxxx:xxxx\n')
-//   if (keys) break
-// }
-
-keys = env.producer.split(':')
-
-const [producer_name, public_key, private_key] = keys
-
-fibos.config_dir = './blockData'
-fibos.data_dir = './blockData'
+fibos.config_dir = `${producer_name}_Dir`
+fibos.data_dir = `${producer_name}_Dir`
 
 let chain_config = {
   'contracts-console': true, // 是否打印合约输出内容
@@ -43,7 +34,6 @@ if (!fs.exists(fibos.data_dir) && !fs.exists(fibos.config_dir)) {
 
 console.notice('config_dir: ', fibos.config_dir)
 console.notice('data_dir: ', fibos.data_dir)
-
 
 
 fibos.load('net', {
